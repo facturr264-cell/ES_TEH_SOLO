@@ -95,12 +95,12 @@
 }
 .ornamen-kiri { 
     transform: scaleX(-1) !important;
-    transform-origin: center;
+    transform-origin: right;
     animation: bukaGulungan 1.5s ease-out forwards;
 }
 
 .ornamen-kanan {
     transform: scaleX(1) !important;
-    transform-origin: center;
+    transform-origin: left;
     animation: bukaGulungan 1.5s ease-out forwards;
 }
