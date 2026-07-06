@@ -1,0 +1,137 @@
+/* card zoom */
+.card-zoom {
+    overflow: hidden;
+}
+
+.card-zoom .card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.card-zoom:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+/* gambar ngezoom */
+.banner-img-zoom {
+    transition: transform 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.banner-img-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* tombol nge zoom */
+.btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* background */
+
+.bg-tentang {
+    background-color: #fdf5e6;
+}
+
+/* outline text */
+.teks-stroke {
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffc107;
+    -webkit-text-stroke: 0.2px black;
+}
+
+.teks-kayu {
+    color: #8b4513;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.garis-bawah {
+    position: relative;
+    display: inline block;
+    padding-bottom: 15px;
+    
+}
+
+.garis-bawah::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100px;
+    height: 5px;
+
+    background-color: #8b4513;
+    border-radius: 10px;
+}
+/* Ukuran dasar gambar ornamen */
+@keyframes bukaGulungan {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.ornamen-animasi {
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    display: inline-block;
+
+}
+.ornamen-kiri { 
+    transform: scaleX(-1) !important;
+    transform-origin: center;
+    animation: bukaGulungan 1.5s ease-out forwards;
+}
+
+.ornamen-kanan {
+    transform: scaleX(1) !important;
+    transform-origin: center;
+    animation: bukaGulungan 1.5s ease-out forwards;
+}
+
+/* Efek zoom saat gambar didekati kursor */
+.img-hover:hover {
+    transform: scale(1.05);
+}
+
+/* Jarak antar huruf untuk teks kecil di atas judul */
+.tracking-wider {
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+}
+
+/* Menghilangkan scroll horizontal karena animasi */
+body {
+    overflow-x: hidden;
+}
+
+.testi-card {
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent !important;
+}
+
+.testi-card:hover {
+    transform: translateY(-10px); /* Efek naik ke atas */
+    border-bottom: 3px solid #ffc107 !important; /* Garis kuning muncul di bawah */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.italic {
+    font-style: italic;
+}
