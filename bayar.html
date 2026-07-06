@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES TEH SOLO</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="image/">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <!-- logo / nama brand -->
+            <a class="navbar-brand fw-bold text-warning d-flex align-items-center" href="index.html">
+                <img src="image/loteh.jpg" alt="Logo Es Teh Solo" width="35" height="35"
+                    class="d-inline-block align-top rounded-circle me-4">
+                ES TEH SOLO
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavSolo">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavSolo">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active link-warning fw-semibold"
+                            href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link link-warning fw-semibold" href="tentang.html">Tentang</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link-warning fw-semibold" href="katalog.html">Katalog</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link-warning fw-semibold" href="bayar.html">Bayar</a></li>
+                    <li class="nav-item"><a class="nav-link link-warning fw-semibold" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 flex-grow-1" style="max-width: 600px;">
+        <div class="card shadow border-0 p-4">
+            <h3 class="fw-bold mb-4 text-center text-dark">Formulir Pesanan</h3>
+
+            <!-- Notifikasi Sukses JavaScript -->
+            <div id="notifSukses"></div>
+
+            <form id="formTeh">
+                <div class="mb-3">
+                    <label for="namaPembeli" class="form-label fw-bold">Nama Anda</label>
+                    <input type="text" class="form-control" id="namaPembeli" required placeholder="Ketik nama lengkap">
+                </div>
+
+                <div class="mb-3">
+                    <label for="pilihMenu" class="form-label fw-bold">Pilih Varian Es Teh</label>
+                    <select class="form-select" id="pilihMenu" required>
+                        <option value="" disabled selected>-- Pilih Rasa --</option>
+                        <option value="Es Teh Original">Es Teh Original</option>
+                        <option value="Es Lemon Tea">Es Lemon Tea</option>
+                        <option value="Es Teh Susu">Es Teh Susu</option>
+                        <option value="Es Teh Milo">Es Teh Milo (best seller)</option>
+                        <option value="Es Teh Kampoel">Es Teh Kampoel</option>
+                        <option value="Es Teh Matcha">Es Teh Matcha</option>
+                        <option value="Es Teh Beng Beng">Es Teh Beng Beng</option>
+                        <option value="Es Teh Tarik">Es Teh Tarik</option>
+                        <option value="Es Teh Chocolatos">Es Teh Chocolatos</option>
+                        <option value="Es Nutrisari">Es Nutrisari</option>
+                        <option value="Es Teh Susu Coklat">Es Teh Susu Coklat</option>
+                        <option value="Es Teh Chocolatos Matcha">Es Teh Chocolatos Matcha</option>
+                        <option value="Es Teh Chocolatos Taro">Es Teh Chocolatos Taro</option>
+                        <option value="Es Teh Leci">Es Teh Leci</option>
+                    </select>
+                </div>
+
+                <!-- SUB MENU NUTRISARI -->
+                <div class="mb-3 d-none" id="subNutrisari">
+                    <label for="pilihRasaNutrisari" class="form-label fw-bold text-orange" style="color: #ff6600;">Pilih
+                        Varian Rasa Nutrisari</label>
+                    <select class="form-select" id="pilihRasaNutrisari">
+                        <option value="" disabled selected>-- Pilih Rasa Nutrisari --</option>
+                        <option value="Jeruk Peras">Jeruk Peras</option>
+                        <option value="Florida Orange">Florida Orange</option>
+                        <option value="Sweet Guava">Sweet Guava</option>
+                        <option value="Mangga Gandaria">Mangga Gandaria</option>
+                        <option value="Blewah">Blewah</option>
+                        <option value="Jeruk Maroko">Jeruk Maroko</option>
+                        <option value="Lychee Tea">Lychee Tea</option>
+                        <option value="Jeruk Nipis">Jeruk Nipis</option>
+                        <option value="Jeruk Bali">Jeruk Bali</option>
+                        <option value="Markisa">Markisa</option>
+                        <option value="Es Cincau">Es Cincau</option>
+                        <option value="Anggur">Anggur</option>
+                        <option value="Lemon Tea">Lemon Tea</option>
+                        <option value="Milky Orange">Milky Orange</option>
+                        <option value="Jaja Orange">Jaja Orange</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="pilihukuran" class="form-label fw-bold">Pilih Varian Ukuran</label>
+                    <select class="form-select" id="pilihukuran" required>
+                        <option value="" disabled selected>-- Pilih Ukuran --</option>
+                        <option value="Kecil">Kecil (Rp.3000)</option>
+                        <option value="Sedang">Sedang (Rp.5000)</option>
+                        <option value="Jumbo">Jumbo (Rp.6000)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="jumlahGelas" class="form-label fw-bold">Jumlah Pesanan (Gelas)</label>
+                    <input type="number" class="form-control" id="jumlahGelas" min="1" value="1" required>
+                </div>
+                <!-- KODE BARU -->
+                <button type="submit" class="btn btn-warning text-dark w-100 py-2 fw-bold shadow-sm">Konfirmasi
+                    Pesanan</button>
+                <script src="js/javascript.js"></script>
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto border-top border-secondary">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Kolom 1 -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning text-start">
+                        <i class="bi bi-cup-straw me-2"></i>Es Teh Solo
+                    </h5>
+                    <p class="text-start ps-4 text-normal mb-4 text-warning">
+                        Pelopor minuman es teh otentik khas Solo dengan racikan daun teh alami pilihan. Menyegarkan hari
+                        Anda dengan rasa manis sepet yang pas dan harga yang sangat bersahabat di kantong.
+                    </p>
+                </div>
+
+                <!-- Kolom 2 -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Tautan Cepat</h5>
+                    <p class="mb-2"><a href="index.html" class="text-uppercase mb-4 text-warning">Beranda</a></p>
+                    <p class="mb-2"><a href="tentang.html" class="text-uppercase mb-4 text-warning">Tentang
+                            Kami</a></p>
+                    <p class="mb-2"><a href="katalog.html" class="text-uppercase mb-4 text-warning">Katalog
+                            Menu</a></p>
+                    <p class="mb-2"><a href="bayar.html" class="text-uppercase mb-4 text-warning">Cara Bayar</a>
+                    </p>
+                    <p class="mb-2"><a href="kontak.html" class="text-uppercase mb-4 text-warning">Hubungi Kami</a>
+                    </p>
+                </div>
+
+                <!-- Kolom 3 -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Jam Buka Kedai</h5>
+                    <p class="text-uppercase mb-4 text-warning"><i class="bi bi-clock me-1"></i>Senin - Jumat: 09.00 -
+                        21.00 WIB
+                    </p>
+</html>
